@@ -62,6 +62,8 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
+map <leader>t <C-p>
+
 " Write files with sudo
 cmap w!! w !sudo tee % >/dev/null
 
