@@ -17,6 +17,8 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'spf13/vim-colors'
+Bundle "pangloss/vim-javascript"
+
 
 filetype plugin indent on     " required!
 syntax on
@@ -70,9 +72,10 @@ if has('gui_running')
 	set guioptions-=T           " remove the toolbar
 	set lines=40                " 40 lines of text instead of 24,
 	if has("gui_gtk2")
-		set guifont=Andale\ Mono\ Regular\ 12,Menlo\ Regular\ 12,Consolas\ Regular\ 12,Courier\ New\ Regular\ 12
+		set guifont=Inconsolata\ 12
+		"set guifont=Andale\ Mono\ Regular\ 12,Menlo\ Regular\ 12,Consolas\ Regular\ 12,Courier\ New\ Regular\ 12
 	else
-		set guifont=Andale\ Mono\ Regular:h12,Menlo\ Regular:h12,Consolas\ Regular:h12,Courier\ New\ Regular:h12
+		"set guifont=Andale\ Mono\ Regular:h12,Menlo\ Regular:h12,Consolas\ Regular:h12,Courier\ New\ Regular:h12
 	endif
 	if has('gui_macvim')
 		set transparency=5          " Make the window slightly transparent
@@ -87,3 +90,8 @@ endif
 " Fix the column color to not be so ugly
 hi ColorColumn ctermfg=Grey ctermbg=Blue
 hi ColorColumn guifg=Grey guibg=Blue
+
+" javascript indentation
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
