@@ -40,6 +40,7 @@ set ignorecase		" ignore case when searching
 set smarttab		" insert tabs on the start of a line according to shiftwidth, not tabstop
 set hlsearch		" highlight search terms
 set incsearch		" incremental searching
+set expandtab
 
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
@@ -97,3 +98,7 @@ hi ColorColumn guifg=Grey guibg=Blue
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
+
+" sync syntax problems
+autocmd FileType html map <C-l> :syntax sync fromstart<CR> <bar> :redraw!<CR>
+autocmd FileType javascript map <C-l> :syntax sync fromstart<CR> <bar> :redraw!<CR>
