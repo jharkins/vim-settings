@@ -1,23 +1,24 @@
 " Joe's .vimrc
-set nocompatible
-filetype off
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" Bundle Stuff
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
-Bundle 'jashkenas/coffee-script'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neosnippet'
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'spf13/vim-colors'
-Bundle "pangloss/vim-javascript"
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'kien/ctrlp.vim'
+Plugin 'jashkenas/coffee-script'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'tpope/vim-vividchalk'
+Plugin 'spf13/vim-colors'
+Plugin 'pangloss/vim-javascript'
+
+call vundle#end()
 
 
 filetype plugin indent on     " required!
@@ -50,18 +51,6 @@ set colorcolumn=80
 
 " Automatically Compile Coffee Files
 autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
-
-" The autocomplete engine
-let g:neocomplcache_enable_at_startup = 1
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 map <leader>t <C-p>
 
